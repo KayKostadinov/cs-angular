@@ -1,13 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'custom stuff';
+
+export class AppComponent implements OnInit {
+  title = 'custom';
+  users: any;
 
   constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.http.get('https://localhost:5001/api/users').subscribe(res => {
+      this.users = res;
+    }, error => {
+      console.log(error);
+    })
+  }
 }
