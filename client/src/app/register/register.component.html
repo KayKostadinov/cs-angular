@@ -1,0 +1,34 @@
+
+<section class="container">
+    <div class="left-container">
+        <img src="../assets/IMG_1233.PNG" id="left-container-img" />
+    </div>
+    
+    <div class="right-container">
+        <h1>Register</h1>
+        <h4>Reading is power!</h4>
+        <form (ngSubmit)="onSubmit()" class="form">
+            <div class="form-group">
+                <label for="first-name-reg" [ngClass]="{'filled' : firstName}">First name:</label>
+                <input type="text" [(ngModel)]="firstName" id="first-name-reg" name="firstName">
+            </div>
+            <div class="form-group">
+                <label for="last-name-reg" [ngClass]="{'filled' : lastName}">Last name:</label>
+                <input type="text" [(ngModel)]="lastName" id="last-name-reg" name="lastName">
+            </div>
+            <div class="form-group">
+                <label for="email-reg" [ngClass]="{'filled' : email}">Email:</label>
+                <input type="email"  [(ngModel)]="email" id="email-reg" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password-reg" [ngClass]="{'filled' : password}">Password:</label>
+                <input type="password" [(ngModel)]="password" id="password-reg" name="password">
+            </div>
+            <div class="form-group">
+                <label for="adress-reg" [ngClass]="{'filled' : address}">Adress:</label>
+                <input type="text" [(ngModel)]="address" id="adress-reg" name="adress">
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+</section>
